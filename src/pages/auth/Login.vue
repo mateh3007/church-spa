@@ -72,8 +72,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { authCustomApi } from './auth.api'
 
 const router = useRouter()
+const $api = authCustomApi()
 
 const email = ref('')
 const password = ref('')
@@ -83,14 +85,9 @@ const loading = ref(false)
 const handleLogin = async () => {
   loading.value = true
   try {
-    // TODO: Implementar chamada à API de login
-    console.log('Login:', { email: email.value, password: password.value })
+    await $api.login({ email: email.value, password: password.value })
     
-    // Simulação - remover quando implementar API
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    // Redirecionar após login bem-sucedido
-    // router.push('/dashboard')
+    router.push('/dashboard')
   } catch (error) {
     console.error('Erro no login:', error)
   } finally {
