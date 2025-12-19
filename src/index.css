@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(28.2% 0.091 267.935);
+  --color-surface: #f8fafc;
+}
+
+/* button {
+  @apply px-10 py-2 cursor-pointer font-semibold rounded-lg transition-all outline-none focus:ring-2 focus:ring-offset-2 bg-primary hover:bg-primary/80 active:bg-primary/90 text-white  flex items-center justify-center gap-2 text-sm;
+}
+
+button:hover {
+  @apply bg-primary/80;
+}
+
+button:active {
+  @apply bg-primary/90;
+}
+
+button:focus {
+  @apply ring-primary;
+} */
